@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- C-3: -->
+
+
+	<bean class="com.springlearn.c3_ref.Second" name="second">
+
+		<property name="name" value="pradeep" />
+		<property name="phone" value="984945165" />
+
+	</bean>
+	
+	
+	<bean class="com.springlearn.c3_ref.First" name="first1"   p:id="15" p:sec-ref="second"/>  
+	
+	
+	<bean class="com.springlearn.c3_ref.First" name="first">
+
+		<property name="id" value="14" />
+
+		<!-- <property name="sec"> <ref bean="second" /> </property> -->
+
+
+		<property name="sec" ref="second" />
+
+
+	</bean>
+
+
+
+
+
+
+
+
+</beans>

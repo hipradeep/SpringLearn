@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd
+	  http://www.springframework.org/schema/util
+ 	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- C-2: -->
+	<!--Standalone -->
+	<util:list list-class="java.util.LinkedList" id="list1">
+		<value>897887115</value>
+		<value>46566</value>
+		<value>654954</value>
+		<value>1949849</value>
+	</util:list>
+	<util:set set-class="java.util.HashSet" id="set1">
+		<value>LKO</value>
+		<value>GHP</value>
+		<value>BBS</value>
+	</util:set>
+	<util:map map-class="java.util.HashMap" id="map1">
+		<entry key="sub1" value="45" />
+		<entry key="sub2" value="60" />
+		<entry key="sub3" value="70" />
+	</util:map>
+	<util:properties id="prop1">
+		<prop key="k1">properties 1</prop>
+		<prop key="k2">properties 2</prop>
+		<prop key="k3">properties 3</prop>
+		<prop key="k4">properties 4</prop>
+	</util:properties>
+
+
+	<bean class="com.springlearn.c1_2.C2_Persion" name="persion1">
+
+		<property name="pName" value="pradeep" />
+
+		<property name="phone">
+			<list>
+				<value>897887115</value>
+				<value>46566</value>
+				<value>654954</value>
+				<value>1949849</value>
+				<null />
+			</list>
+
+		</property>
+
+		<property name="address">
+			<set>
+				<value>LKO</value>
+				<value>GHP</value>
+				<value>BBS</value>
+			</set>
+
+		</property>
+		<property name="mark">
+			<map>
+
+				<entry key="sub1" value="45" />
+				<entry key="sub2" value="60" />
+				<entry key="sub3" value="70" />
+			</map>
+
+		</property>
+
+		<property name="props">
+			<props>
+
+				<prop key="k1">properties 1</prop>
+				<prop key="k2">properties 2</prop>
+				<prop key="k3">properties 3</prop>
+				<prop key="k4">properties 4</prop>
+			</props>
+
+		</property>
+
+
+
+	</bean>
+	<bean class="com.springlearn.c1_2.C2_Persion" name="persion2">
+
+		<property name="pName" value="pradeep" />
+
+		<property name="phone" ref="list1" />
+
+
+		<property name="address" ref="set1" />
+
+		<property name="mark" ref="map1" />
+
+
+		<property name="props" ref="prop1" />
+
+
+
+	</bean>
+
+
+
+
+
+
+
+
+</beans>

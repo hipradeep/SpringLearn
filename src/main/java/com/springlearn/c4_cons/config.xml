@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 4-3: -->
+
+
+	<bean class="com.springlearn.c4_cons.Boo" name="bo"
+		c:name="Boo Class Filed Name" />
+		
+	<bean class="com.springlearn.c4_cons.Boo" name="bo1">
+		<constructor-arg>
+			<value>Boo Class Field Name</value>
+		</constructor-arg>
+	</bean>
+
+
+	<bean class="com.springlearn.c4_cons.Foo" name="foo">
+
+		<constructor-arg>
+			<value>12</value>
+		</constructor-arg>
+
+		<constructor-arg>
+			<value>Pradeep</value>
+		</constructor-arg>
+
+	</bean>
+
+	<bean class="com.springlearn.c4_cons.Foo" name="foo1">
+
+		<constructor-arg value="13" type="int" index="0" />  <!-- we use 'type' to remove ambiguity problem -->
+
+
+		<constructor-arg value="Pradeep" />
+
+
+		<constructor-arg ref="bo" />
+
+
+
+	</bean>
+
+
+
+
+
+
+
+
+</beans>

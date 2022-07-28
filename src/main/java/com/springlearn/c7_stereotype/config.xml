@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd
+ 	http://www.springframework.org/schema/util
+ 	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- C-7: -->
+
+
+	<context:component-scan
+		base-package="com.springlearn.c7_stereotype" />
+
+	<!-- by default Singleton type -->
+	<!-- <bean class="com.springlearn.c7_stereotype.StudentNew" name="student3" 
+		scope="prototype"/> -->
+
+	<util:list list-class="java.util.LinkedList" id="list1">
+		<value>897887115</value>
+		<value>46566</value>
+		<value>654954</value>
+		<value>1949849</value>
+	</util:list>
+
+
+</beans>
