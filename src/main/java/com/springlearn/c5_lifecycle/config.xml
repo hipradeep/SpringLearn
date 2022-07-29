@@ -21,18 +21,13 @@
 		</property>
 
 	</bean>
+	
 	<bean class="com.springlearn.c5_lifecycle.LifecycleTest2" name="lifecycle2">
 		<property name="name">
 			<value>preadeep</value>
 		</property>
 
 	</bean>
-
-
-
-
-
-
 
 
 

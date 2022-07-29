@@ -15,17 +15,16 @@ public class LifecycleTest2 implements InitializingBean, DisposableBean {
 		this.name = name;
 	}
 	
-	
-	
 	@Override
 	public String toString() {
 		return "LifecycleTest [name=" + name + "]";
 	}
 
-	//we can change the name of this afterPropertiesSet/destroy name method, but make same as in config.xml
+	
 	public void destroy() throws Exception {
 		
 		System.out.println("destroy2 method");
+		
 	}
 
 	public void afterPropertiesSet() throws Exception {

@@ -12,8 +12,7 @@ public class LifecycleTest {
 		this.name = name;
 	}
 	
-	
-	
+
 	@Override
 	public String toString() {
 		return "LifecycleTest [name=" + name + "]";

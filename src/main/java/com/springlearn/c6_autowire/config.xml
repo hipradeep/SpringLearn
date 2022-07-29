@@ -12,9 +12,9 @@
 
 	<!-- C-6: -->
 
-	<context:annotation-config />
+	<context:annotation-config /> <!-- this is for enable autowire -->
 
-	
+	<!-- bean-1 -->
 	<bean class="com.springlearn.c6_autowire.Address" name="address"> <!-- by using @Autowire name="", can be differ from class obj name  -->
 		<property name="city">
 			<value>lko</value>
@@ -25,13 +25,32 @@
 
 	</bean>
 
+   <!-- bean-2 -->
 	<!-- <bean class="com.springlearn.c6_autowire.Office" name="office" autowire="byName"/> 
 		autowire="byName|byType|constructor" -->
 
-	<!-- Not it is for @Autowire Anotation , no need to mention autowire="" -->
+  <!-- bean-3 -->
+	<!-- Not it is for @Autowire Annotation , no need to mention autowire="" -->
 	<bean class="com.springlearn.c6_autowire.Office" name="office" />
 
+<!--  
 
+	Using Xml
+	1. first we have to create the object of 'Address' class using bean and we named it 'address'. (see bean-1)
+	2. then we create bean of 'Office' class and set the autowire="byName",(see bean-2) IoC will search beans by name in beans objects 
+	then  set the object of 'address' from bean in 'Office' class 'address' object
+	3. if we use autowire="byType", the ioc will search the type of 'address' bean if it find single object of 'address' then set into 
+	office's 'address' object, if there are multiple beans of 'address' type the there will an error
+	4. if we use  autowire="constructor" the it set bean by calling constructor, not by setter if single 'address' bean found, else error 
+
+	Using @Autowire on Office's 'address' object
+	1. first we have to create the object of 'Address' class using bean, and named 'address' name can be differ
+	2. then add '<context:annotation-config />'  this is for enable autowire
+	3. we use this @Autowire on the Object(on properties), setter method or on the constructor
+	4. @Qualifier("office") on properties,  if there is multiple bean available ioc, this will help to autowire particular bean
+	
+
+-->
 
 
 
